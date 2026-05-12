@@ -9,3 +9,19 @@ It is used by terraform (directed acyclic graph)
 # Terraform state
 
 - keep the track of our infra state using state file (json formatted text file)
+
+# Modules
+
+- Bundle together a subset of code
+- pass in arguments
+- Work like custom resources
+- All terraform code actually has at least one module (default module knonw as root)
+
+## Module requirements
+
+- main.tf file - contains the main code of module, a complex module might call out to other nested modules.
+- variable.tf file - with input variables
+- output.tf file - with output values like public dns.
+- we can use remote sources like S3 bucket to use modules
+- a module can have provider file.
+- registry.terraform.io pre-made modules
